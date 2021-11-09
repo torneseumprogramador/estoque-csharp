@@ -1,0 +1,40 @@
+@model controle_estoque.Models.Entidades.Estoque
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Novo</h1>
+
+<h4>Estoque</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ProdutoId" class="control-label"></label>
+                <select asp-for="ProdutoId" class ="form-control" asp-items="ViewBag.ProdutoId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantidade" class="control-label"></label>
+                <input asp-for="Quantidade" class="form-control" />
+                <span asp-validation-for="Quantidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Data" class="control-label"></label>
+                <input asp-for="Data" class="form-control" />
+                <span asp-validation-for="Data" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoRegistro" class="control-label"></label>
+                <select asp-for="TipoRegistro" asp-items="ViewBag.TipoRegistro" class="form-control"></select>
+                <span asp-validation-for="TipoRegistro"  class="text-danger"></span>
+            </div><hr>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-default">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
